@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebSite.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
+
     public class ContactController : Controller
     {
         private readonly IContactService _contactService;

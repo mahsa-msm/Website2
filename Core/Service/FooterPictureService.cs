@@ -11,8 +11,8 @@ namespace Core.Service
 {
     public class FooterPictureService : IFooterPictureService
     {
-        private readonly WebsiteContext _context;
-        public FooterPictureService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public FooterPictureService(ApplicationDbContext context)
         {
             _context = context;
         }

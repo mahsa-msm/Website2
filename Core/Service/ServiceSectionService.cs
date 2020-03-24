@@ -12,8 +12,8 @@ namespace Core.Service
 {
     public class ServiceSectionService : IServiceSectionService
     {
-        private readonly WebsiteContext _context;
-        public ServiceSectionService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public ServiceSectionService(ApplicationDbContext context)
         {
             _context = context;
         }

@@ -1,0 +1,64 @@
+﻿#Blog .BlogInfo li:nth-child(1) {
+    font-size: 30px
+}
+
+#Blog .BlogInfo li {
+    padding-bottom: 2.5%
+}
+
+#Blog .BlogInfo li p {
+    display: inline-block
+}
+
+#Blog .BlogInfo li .BlogDescription {
+   padding-bottom:10%;
+   padding-top:5%
+}
+    #Blog .BlogInfo li.btnBlog {
+        padding-bottom: 10%;
+    }
+    #Blog .BlogInfo li .BlogTitle {
+       font-size:22px
+    }
+
+
+.buttonhover {
+    /*=====Undefult-settings====*/
+    border: none;
+    outline: none;
+    /*=========================*/
+    display: block;
+    border-radius: 25px;
+    width: 120px;
+    background: #ea3c56;
+    color: #FFFFFF;
+    transition: all .5s ease-in-out;
+    height: 30px;
+}
+
+
+    .buttonhover:hover {
+        background: #3ba2c1;
+        color: #FFFFFF;
+    }
+
+@media all and (max-width:1600px) {
+    .buttonhover {
+        width: 120px;
+        height: 30px;
+    }
+}
+
+@media all and (max-width: 300px) {
+    .buttonhover {
+        width: 120px;
+        height: 30px;
+    }
+}
+
+@media all and (max-width: 300px) {
+    .buttonhover {
+        width: 120px;
+        height: 30px;
+    }
+}

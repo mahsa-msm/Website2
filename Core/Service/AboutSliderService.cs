@@ -11,8 +11,8 @@ namespace Core.Service
 {
     public class AboutSliderService : IAboutSliderService
     {
-        private readonly WebsiteContext _context;
-        public AboutSliderService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public AboutSliderService(ApplicationDbContext context)
         {
             _context = context;
         }

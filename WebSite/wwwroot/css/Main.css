@@ -1,0 +1,143 @@
+﻿ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    font-size: 17px;
+}
+.container{
+    padding-top:5%;
+    padding-bottom:4%
+}
+.col-md-3, .col-xl-3, .col-sm-6, .col-lg-6, .col-xl-4,
+.col-md-4, .col-lg-5, .col-md-5, .col-lg-7, .col-md-7 {
+    padding-bottom: 4%
+}
+
+#Home {
+    overflow: hidden;
+    color: white
+}
+#About .col-md-6, #About .col-lg-6 {
+    padding-bottom: 0
+}
+.AboutText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.AboutHeader {
+    color: #3ba2c1;
+    text-align:center
+}
+
+
+#Services {
+ 
+    background-size: cover;
+    color: white;
+    text-align:center
+}
+
+
+#Team {
+    background-size: cover;
+    color: white;
+    margin: auto;
+}
+#Contact {
+    background-size: cover;
+    color: white;
+    font-size:14px;
+}
+
+#Blog {
+    background-color: ghostwhite;
+    background-size: cover;
+    color: white;
+    margin: auto;
+}
+
+    #Blog .title {
+        color: #3ba2c1
+    }
+
+ 
+#Footer {
+    background-color: #1d1b1b ;
+    color: white;
+ 
+}
+.FooterPic {
+    text-align:center
+}
+.FooterPic a {
+    display: inline-block ;
+    width: 75px ;
+    margin: 10px;
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.FooterPic a img {
+    display: block;
+    width: 100%;
+    height:50px
+}
+
+.title {
+    font-size: 40px;
+    padding:2%;
+    text-align: center;
+}
+
+@media all and (max-width: 1000px) {
+    .title {
+        font-size: 35px;
+    }
+}
+@media all and (max-width: 800px) {
+    .title {
+        font-size: 30px;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .title {
+        font-size: 26px;
+    }
+}
+@media all and (max-width: 350px) {
+    .title {
+        font-size: 23px;
+    }
+}
+@media all and (max-width: 600px) {
+    .btn.btn-circle {
+        display:none
+    }
+}
+
+
+@media all and (max-width: 575px) and (min-width: 400px) {
+    #Portfolio .container {
+        padding-right: 6%;
+        padding-left: 6%
+    }
+    #Team .container {
+        padding-right: 15%;
+        padding-left: 15%
+    }
+    #Blog .container {
+        padding-right: 15%;
+        padding-left: 15%
+    }
+}
+
+
+
+
+
+

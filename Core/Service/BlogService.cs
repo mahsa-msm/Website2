@@ -12,8 +12,8 @@ namespace Core.Service
 {
     public class BlogService : IBlogService
     {
-        private readonly WebsiteContext _context;
-        public BlogService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public BlogService(ApplicationDbContext context)
         {
             _context = context;
         }

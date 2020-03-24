@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebSite.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
+
     public class BlogController : Controller
     {
         private readonly IBlogService _blogService;

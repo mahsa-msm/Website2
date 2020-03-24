@@ -13,8 +13,8 @@ namespace Core.Service
 {
     public class ContactService : IContactService
     {
-        private readonly WebsiteContext _context;
-        public ContactService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public ContactService(ApplicationDbContext context)
         {
             _context = context;
         }

@@ -1,8 +1,120 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using DataLayer.Entities
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    Layout = null;
+    IEnumerable<MenuItem> menuItems = ViewData["MenuItem"] as IEnumerable<MenuItem>;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/pogo-slider.css">
+    <link rel="stylesheet" href="~/css/pogo-slider.min.css">
+    <link rel="stylesheet" href="~/css/Slider.css">
+    <link rel="stylesheet" href="~/css/MenuButton.css">
+    <link rel="stylesheet" href="~/css/Image-ch.css">
+    <link rel="stylesheet" href="~/css/Main.css">
+    <link rel="stylesheet" href="~/css/Hr.css">
+    <link rel="stylesheet" href="~/css/PortfolioCss.css">
+    <link rel="stylesheet" href="~/css/TeamImageHover.css">
+    <link rel="stylesheet" href="~/css/HoverImage.css">
+    <link rel="stylesheet" href="~/css/BlogItem.css">
+    <link rel="stylesheet" href="~/css/ModalBlog.css">
+    <link rel="stylesheet" href="~/css/Section2Slider.css ">
+    <link rel="stylesheet" href="~/css/ContactInput.css">
+    <link rel="stylesheet" href="~/css/simpleLightbox.min.css">
+
+</head>
+<body>
+    <header class='main-header'>
+        <div class="menu-wrap">
+            <input type='checkbox' id='nav-tog'>
+            <label for='nav-tog' class="drop-trigger">
+                <span class="btn-bar top"></span>
+                <span class='btn-bar middle'></span>
+                <span class='btn-bar bottom'></span>
+            </label>
+            <nav class="main-nav">
+
+                <label for='nav-tog' class='nav-revert'></label>
+
+                @foreach (var item in menuItems)
+                {
+                    <a href='#@item.IdName' class="nav-item">
+                        <span> @item.Title </span>
+                    </a>
+                }
+
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <a class="nav-item" asp-area="" asp-controller="Admin" asp-action="Index"> Admin Panel</a>
+               
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <button type="submit" class="nav-item">Logout</button>
+                    </form>
+                }
+                else
+                {
+                    <a class="nav-item" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                    <a class="nav-item" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                }
+
+
+            </nav>
+        </div>
+    </header>
+
+
+    @Html.Partial("_Home")
+
+    @Html.Partial("_About")
+
+    @Html.Partial("_Service")
+
+    @Html.Partial("_Portfolio")
+
+    @Html.Partial("_Team")
+
+    @Html.Partial("_Blog")
+
+    @Html.Partial("_Contact")
+
+    @Html.Partial("_Footer")
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="~/js/jquery.pogo-slider.min.js"></script>
+    <script src="~/js/Slider.js"></script>
+    <script src="~/js/MenuButton.js"></script>
+    <script src="~/js/slider2.js"></script>
+    <script src="~/js/Section2Slider.js"></script>
+    <script src="~/js/simpleLightbox.min.js"></script>
+    <script src="~/js/LightBox.js"></script>
+
+    <script>
+        AOS.init({
+
+            duration: 1000
+        });
+
+    </script>
+
+
+
+</body>
+</html>
+
+

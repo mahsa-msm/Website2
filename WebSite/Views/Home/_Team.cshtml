@@ -1,0 +1,45 @@
+﻿@using DataLayer.Entities
+@{
+    IEnumerable<Team> teamModel = ViewData["Team"] as IEnumerable<Team>;
+    IEnumerable<TeamSection> teamSectionModel = ViewData["TeamSection"] as IEnumerable<TeamSection>;
+    var teambackground = "";
+
+
+    if (teamSectionModel.Count() != 0)
+    {
+        teambackground = teamSectionModel.First().BackgroundImage != null ? teamSectionModel.First().BackgroundImage : "";
+    }
+}
+
+<div id="Team" style="background-image: url('../../img/@teambackground');">
+    <div class="container">
+        @{ if (teamSectionModel.Count() != 0)
+            {
+                <h3 class="title">@teamSectionModel.First().Title</h3>
+            }
+        }
+        <div class="text-center">
+            <h1 class="lines-effect">
+                <i class="fa fa-star-o"></i>
+            </h1>
+        </div>
+        <div class="gallery-block grid-gallery">
+            <div class="row">
+                @foreach (var item in teamModel)
+                {
+                    <div class="col-md-3 col-xl-3 col-sm-6 item">
+                        <div class="hover_box" data-aos="zoom-in">
+                            <div class="hover_img">
+                                <img src="~/img/@item.ImageUrl" />
+                            </div>
+                            <div class="hover_content">
+                                <h3>@item.Text</h3>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>

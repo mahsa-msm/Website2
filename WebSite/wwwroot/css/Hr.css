@@ -1,0 +1,129 @@
+﻿
+.lines-effect {
+    display: inline-block;
+    position: relative;
+    color: black;
+    font-size: 21px ;
+ 
+    padding-bottom:5%
+   
+}
+
+    .lines-effect::after, .lines-effect::before {
+        content: '';
+        position: absolute;
+        width: 260px;
+        height: 2px;
+        background-color: currentColor;
+        top: 0.6em;
+    }
+
+    .lines-effect::before {
+        left: -270px;
+    }
+
+    .lines-effect::after {
+        right: -270px;
+    }
+
+#Blog .lines-effect::after, #Blog .lines-effect::before {
+    background-color: #3ba2c1;
+}
+#Blog .lines-effect {
+    color: #3ba2c1
+}
+
+#Services .lines-effect::after, #Services .lines-effect::before {
+    background-color: #fff;
+}
+#Services .lines-effect {
+    color: #fff;
+}
+
+#Team .lines-effect::after, #Team .lines-effect::before {
+    background-color: #fff;
+}
+#Team .lines-effect {
+    color: #fff;
+}
+
+#Contact .lines-effect::after, #Contact .lines-effect::before {
+        background-color: #fff;
+    }
+#Contact .lines-effect {
+    color: #fff;
+}
+@media all and (max-width: 720px) {
+
+
+    .lines-effect::after, .lines-effect::before {
+        width: 200px;
+    }
+    .lines-effect::before {
+        left: -210px;
+    }
+
+    .lines-effect::after {
+        right: -210px;
+    }
+}
+@media all and (max-width: 580px) {
+
+
+    .lines-effect::after, .lines-effect::before {
+        width: 170px;
+    }
+
+    .lines-effect::before {
+        left: -178px;
+    }
+
+    .lines-effect::after {
+        right: -178px;
+    }
+}
+@media all and (max-width: 460px) {
+
+
+    .lines-effect::after, .lines-effect::before {
+        width: 140px;
+    }
+
+    .lines-effect::before {
+        left: -145px;
+    }
+
+    .lines-effect::after {
+        right: -145px;
+    }
+}
+@media all and (max-width: 380px) {
+
+
+    .lines-effect::after, .lines-effect::before {
+        width: 100px;
+    }
+
+    .lines-effect::before {
+        left: -110px;
+    }
+
+    .lines-effect::after {
+        right: -110px;
+    }
+}
+@media all and (max-width: 290px) {
+
+
+    .lines-effect::after, .lines-effect::before {
+        width: 75px;
+    }
+
+    .lines-effect::before {
+        left: -80px;
+    }
+
+    .lines-effect::after {
+        right: -80px;
+    }
+}

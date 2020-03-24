@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebSite.Controllers
 {
-    [Authorize]
+    [Authorize(Roles="Admin")]
     public class AboutController : Controller
     {
         private readonly IAboutService _aboutService;

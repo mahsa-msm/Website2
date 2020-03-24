@@ -12,8 +12,8 @@ namespace Core.Service
     public class BanerSliderService : IBanerSliderService
     {
 
-        private readonly WebsiteContext _context;
-        public BanerSliderService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public BanerSliderService(ApplicationDbContext context)
         {
             _context = context;
         }

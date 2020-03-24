@@ -12,8 +12,8 @@ namespace Core.Service
 {
     public class PortfolioService : IPortfolioService
     {
-        private readonly WebsiteContext _context;
-        public PortfolioService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public PortfolioService(ApplicationDbContext context)
         {
             _context = context;
         }

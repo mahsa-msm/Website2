@@ -9,8 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebSite.Controllers
 {
-    [Authorize]
-
+    [Authorize(Roles = "Admin")]
     public class AboutSliderController : Controller
     {
         private readonly IAboutSliderService _aboutSliderService;

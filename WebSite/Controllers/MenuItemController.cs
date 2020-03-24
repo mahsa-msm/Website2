@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebSite.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
+
     public class MenuItemController : Controller
     {
         private readonly IMenuItemService _menuItemService;

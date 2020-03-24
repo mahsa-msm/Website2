@@ -1,0 +1,35 @@
+﻿@using DataLayer.Entities
+@{
+    IEnumerable<About> Aboutmodel = ViewData["About"] as IEnumerable<About>;
+    IEnumerable<AboutSlider> AboutSlidermodel = ViewData["AboutSlider"] as IEnumerable<AboutSlider>;
+}
+
+
+
+<div id="About" data-aos="zoom-in">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 AboutText">
+                @{ if (Aboutmodel.Count() != 0)
+                    {
+                        var item = Aboutmodel.First();
+                        <h1 class="AboutHeader">@item.Titel</h1>
+                        <div> @item.Text</div>
+
+                    }
+                }
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div id="slideshow">
+                    @foreach (var item in AboutSlidermodel)
+                    {
+                        <img src="~/img/@item.ImageUrl">
+                    }
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

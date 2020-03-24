@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebSite.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
+
     public class TeamSectionController : Controller
     {
         private readonly ITeamSectionService _teamSectionService;

@@ -13,8 +13,8 @@ namespace Core.Service
 
     public class BlogSectionService : IBlogSectionService
     {
-        private readonly WebsiteContext _context;
-        public BlogSectionService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public BlogSectionService(ApplicationDbContext context)
         {
             _context = context;
         }

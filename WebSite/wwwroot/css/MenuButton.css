@@ -1,0 +1,255 @@
+
+/* =====================
+    Base styles
+====================== */
+.main-header {
+    width: 100%;
+    background: rgb(50,50,50);
+    box-shadow: 0px 3px 4px 0px rgba(0,0,0,.4);
+    position: fixed;
+    display: flex;
+    z-index: 25
+}
+
+.menu-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+  
+}
+
+/* =====================
+    Mobile Nav closed
+====================== */
+.main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0vh;
+    transition: height .0s ease-out .4s, opacity .2s ease-out .2s, padding-left .2s ease-in 0s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 400;
+    overflow: hidden;
+    background-color: rgb(240,240,240);
+    padding-left: 100%;
+}
+
+.nav-item {
+    display: block;
+    padding: 7px 10px;
+    margin: 5px auto;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    background: none;
+    border: none;
+}
+
+
+/* Hamburger btn */
+.drop-trigger {
+    /* Changing these will automatically adjust bars */
+    height: 34px;
+    width: 40px;
+    /* For btn bars */
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all .1s ease-out 0s;
+    z-index: 450;
+    border-width: 0;
+    margin-left: auto;
+    border: solid 1px white;
+}
+    /* Hamburger bars */
+    .drop-trigger .btn-bar {
+        position: absolute;
+        display: block;
+        top: 30%;
+        left: 50%;
+        height: 3px;
+        width: 50%;
+        transition: all .4s ease-in 0s;
+        background: #ea3c56;
+        margin: 0 auto;
+        transform-origin: 50% 50%;
+        transform: translateX(-50%) translateY(-0%) rotate(-0deg);
+        top: 30%;
+        right: 2%;
+    }
+
+.btn-bar.middle {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+}
+
+.btn-bar.bottom {
+    top: calc(80% - 6px);
+}
+
+/* Fills background of nav and is linked to the checkbox toggle */
+.nav-revert {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(50,50,50);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+/* Checkbox used for toggle */
+#nav-tog {
+    display: none;
+}
+
+    /* =====================
+    Mobile Nav open
+====================== */
+    #nav-tog:checked ~ .drop-trigger .btn-bar {
+        transition-timing-function: ease-out;
+    }
+
+    #nav-tog:checked ~ .drop-trigger .btn-bar {
+        top: 50%;
+        background: #ea3c56
+    }
+
+        #nav-tog:checked ~ .drop-trigger .btn-bar.top {
+            transform: translateX(-50%) translateY(-50%) rotate(-315deg);
+        }
+
+        #nav-tog:checked ~ .drop-trigger .btn-bar.middle {
+            transform: translateX(-50%) translateY(-50%) rotate(-225deg);
+        }
+
+        #nav-tog:checked ~ .drop-trigger .btn-bar.bottom {
+            transform: translateX(-50%) translateY(-50%) rotate(-225deg);
+        }
+
+    #nav-tog:checked ~ .main-nav {
+        transition: height .0s ease-in 0s, opacity .2s ease-in 0s, padding-left .23s ease-out .21s;
+        opacity: 0.8;
+        height: 100vh;
+        padding-left: 0%;
+    }
+
+/* ============================
+    Large screen nav
+============================= */
+@media screen and (min-width: 800px) {
+    /* Hides mobile-specific elements */
+   
+    .drop-trigger,
+    .nav-revert {
+        display: none;
+    }
+
+    .main-nav {
+        height: auto;
+        position: relative;
+        padding-left: 0%;
+        flex-direction: row;
+        justify-content: flex-end;
+        opacity: 1;
+        background: rgba(0,0,0,0);
+    }
+
+    .nav-item:first-of-type {
+        margin-top: 0;
+    }
+
+    .nav-item {
+        font-size: 18px;
+        margin: 0 5px;
+        color: white;
+        width: auto;
+    }
+
+        .nav-item:hover {
+            background: #ea3c56;
+            color: #fff;
+            text-decoration: none;
+        }
+}
+
+#header a:hover {
+    font-size: 50px;
+}
+
+/* SCROLL DOWN ARROW */
+.fa-angle-double-down {
+    position: absolute;
+    z-index: 15;
+    font-size: 40px;
+    left: 48.1%;
+    color: #ea3c56;
+    top: 88%;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.52);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding-top: 5px;
+}
+
+@media all and (max-width: 1200px) {
+    .fa-angle-double-down {
+        font-size: 45px;
+        left: 47.7%;
+        top: 85%
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .fa-angle-double-down {
+        font-size: 45px;
+        left: 47.4%;
+        top: 83%;
+        padding-top: 3px;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .fa-angle-double-down {
+        font-size: 42px;
+        left: 47.4%;
+        top: 81%;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .fa-angle-double-down {
+        font-size: 40px;
+        left: 47%;
+        top: 79%
+    }
+}
+
+@media all and (max-width: 700px) {
+    .fa-angle-double-down {
+        font-size: 38px;
+        left: 46%;
+        top: 74%
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .main-header {
+        background: none;
+        box-shadow: none;
+    }
+}

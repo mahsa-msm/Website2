@@ -12,8 +12,8 @@ namespace Core.Service
 {
     public class MenuItemService : IMenuItemService
     {
-        private readonly WebsiteContext _context;
-        public MenuItemService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public MenuItemService(ApplicationDbContext context)
         {
             _context = context;
         }

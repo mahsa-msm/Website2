@@ -11,8 +11,8 @@ namespace Core.Service
 {
     public class TeamService : ITeamService
     {
-        private readonly WebsiteContext _context;
-        public TeamService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public TeamService(ApplicationDbContext context)
         {
             _context = context;
         }

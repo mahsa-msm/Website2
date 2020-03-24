@@ -1,0 +1,89 @@
+﻿
+@using DataLayer.Entities
+@{
+    IEnumerable<Blog> Blogmodel = ViewData["Blog"] as IEnumerable<Blog>;
+    IEnumerable<BlogSection> BlogSectionModel = ViewData["BlogSection"] as IEnumerable<BlogSection>;
+    var blogbackground = "";
+
+    if (BlogSectionModel.Count() != 0)
+    {
+        blogbackground = BlogSectionModel.First().BackgroundImage != null ? BlogSectionModel.First().BackgroundImage : "";
+
+    }
+}
+
+
+<div id="Blog" style="background-image: url('../../img/@blogbackground'">
+    <div class="container">
+        @{ if (BlogSectionModel.Count() != 0)
+            {
+                <h3 class="title">@BlogSectionModel.First().Title</h3>
+            }
+        }
+        <div class="text-center">
+            <h1 class="lines-effect">
+                <i class="fa fa-star-o"></i>
+            </h1>
+        </div>
+        <div class="row">
+            @foreach (var item in Blogmodel)
+            {
+                <div class=" col-xl-4  col-md-4 ">
+                    <div class="hover-zoomin" data-aos="zoom-in">
+                        <ul class="BlogInfo">
+                            <li>
+                                <i class="fa @item.Logo"></i>
+                            </li>
+                            <li>
+                                <div class="BlogTitle">@item.Title</div>
+                            </li>
+                            <li>
+                                <div style="float:left"><i class=" fa fa-user-circle-o "></i><p>@item.Name</p></div>
+                                <div style="float:right"><i class="fa fa-calculator "></i><p>@item.Date</p></div>
+                            </li>
+                            <li>
+                                <a title="">
+                                    <img class="imagehover" src="~/img/@item.ImageUrl" alt="@item.ImageAlt" />
+                                </a>
+                            </li>
+                            <li>
+                                <div class="BlogDescription">@item.Description </div>
+                            </li>
+                            <li class="btnBlog">
+                                <button type='button' class="buttonhover" data-toggle="modal" data-target="#@item.ModalId">
+                                    <i class="fa fa-hand-o-right"></i>read more
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="@item.ModalId" class="modal animated" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 id="myModalLabel" class="modal-title">
+                                    @item.Title
+                                </h1>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <img class="modalImage" src="~/img/@item.ImageUrl" alt="@item.ImageAlt">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        @item.ModalText
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="buttonhover" data-dismiss="modal">
+                                    close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

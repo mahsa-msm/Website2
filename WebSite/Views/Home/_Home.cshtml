@@ -1,0 +1,23 @@
+﻿@using DataLayer.Entities
+@{
+    IEnumerable<BanerSlider> banerSlidermodel = ViewData["BanerSlider"] as IEnumerable<BanerSlider>;
+}
+
+
+
+<div id="Home" class="demo">
+    <div class="pogoSlider" id="js-main-slider">
+        @foreach (var item in banerSlidermodel)
+        {
+            <div class="pogoSlider-slide" data-transition="verticalSlide" data-duration="2000" style="background-image:url('img/@item.ImageUrl');">
+                <div class="pogoSlider-slide-element">
+                    <h3>@item.Title</h3>
+                    <p>@item.Description</p>
+                </div>
+            </div>
+        }
+        <a href="#About" class="btn btn-circle">
+            <i class="fa fa-angle-double-down"></i>
+        </a>
+    </div>
+</div>

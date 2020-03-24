@@ -12,8 +12,8 @@ namespace Core.Service
 {
     public class AboutService : IAboutService
     {
-        private readonly WebsiteContext _context;
-        public AboutService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public AboutService(ApplicationDbContext context)
         {
             _context = context;
         }

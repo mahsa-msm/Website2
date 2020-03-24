@@ -12,8 +12,8 @@ namespace Core.Service
 {
     public class ServiceService : IServiceService
     {
-        private readonly WebsiteContext _context;
-        public ServiceService(WebsiteContext context)
+        private readonly ApplicationDbContext _context;
+        public ServiceService(ApplicationDbContext context)
         {
             _context = context;
         }

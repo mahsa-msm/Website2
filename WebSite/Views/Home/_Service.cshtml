@@ -1,0 +1,129 @@
+﻿@using DataLayer.Entities
+@{
+    IEnumerable<Services> servicemodel = ViewData["Service"] as IEnumerable<Services>;
+    IEnumerable<ServiceSection> ServiceSectionModel = ViewData["ServiceSection"] as IEnumerable<ServiceSection>;
+
+    var serviceCount = servicemodel.Count();
+      var servicebackground = "";
+    if (ServiceSectionModel.Count() != 0)
+    {
+        servicebackground = ServiceSectionModel.First().BackgroundImage != null ? ServiceSectionModel.First().BackgroundImage : "";
+
+    }
+}
+
+<div id="Services" style="background-image: url('../../img/@servicebackground');">
+    <div class="container">
+        @{ if (ServiceSectionModel.Count() != 0)
+            {
+                <h3 class="title">@ServiceSectionModel.First().Title</h3>
+            }
+        }
+        <div class="text-center">
+            <h1 class="lines-effect">
+                <i class="fa fa-star-o"></i>
+            </h1>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4" data-aos="zoom-in">
+                @if (serviceCount > 0)
+                {
+                    <ul class="ch-grid">
+                        <li data-aos="zoom-in">
+                            <div class="ch-item">
+                                <div class="ch-info">
+                                    <div class="ch-info-front" style="background:url('../img/@servicemodel.ElementAt(0).ImageUrl');"></div>
+                                    <div class="ch-info-back">
+                                        <h3>@servicemodel.ElementAt(0).BackTitle</h3>
+                                        <p>@servicemodel.ElementAt(0).BackDescription</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>@servicemodel.ElementAt(0).Title</h3>
+                    <p>@servicemodel.ElementAt(0).Description</p>
+                }
+                @if (serviceCount > 1)
+                {
+                    <ul class="ch-grid">
+                        <li data-aos="zoom-in">
+                            <div class="ch-item">
+                                <div class="ch-info">
+                                    <div class="ch-info-front" style="background:url('../../img/@servicemodel.ElementAt(1).ImageUrl');"></div>
+                                    <div class="ch-info-back">
+                                        <h3>@servicemodel.ElementAt(1).BackTitle</h3>
+                                        <p>@servicemodel.ElementAt(1).BackDescription</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>@servicemodel.ElementAt(1).Title</h3>
+                    <p>@servicemodel.ElementAt(1).Description</p>
+                }
+            </div>
+
+            <div class="col-lg-4 col-md-4" style="padding-top:12%" data-aos="zoom-in">
+                @if (serviceCount > 2)
+                {
+                    <ul class="ch-grid">
+                        <li data-aos="zoom-in">
+                            <div class="ch-item">
+                                <div class="ch-info">
+                                    <div class="ch-info-front" style="background:url('../../img/@servicemodel.ElementAt(2).ImageUrl');"></div>
+                                    <div class="ch-info-back">
+                                        <h3>@servicemodel.ElementAt(2).BackTitle</h3>
+                                        <p>@servicemodel.ElementAt(2).BackDescription</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>@servicemodel.ElementAt(2).Title</h3>
+                    <p>@servicemodel.ElementAt(2).Description</p>
+                }
+            </div>
+            <div class="col-lg-4 col-md-4">
+                @if (serviceCount > 3)
+
+                {
+                    <ul class="ch-grid">
+                        <li data-aos="zoom-in">
+                            <div class="ch-item">
+                                <div class="ch-info">
+                                    <div class="ch-info-front" style="background:url('../../img/@servicemodel.ElementAt(3).ImageUrl');"></div>
+                                    <div class="ch-info-back">
+                                        <h3>@servicemodel.ElementAt(3).BackTitle</h3>
+                                        <p>@servicemodel.ElementAt(3).BackDescription</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>@servicemodel.ElementAt(3).Title</h3>
+                    <p>@servicemodel.ElementAt(3).Description</p>
+                }
+                @if (serviceCount > 4)
+                {
+                    <ul class="ch-grid">
+                        <li data-aos="zoom-in">
+                            <div class="ch-item">
+                                <div class="ch-info">
+                                    <div class="ch-info-front" style="background:url('../../img/@servicemodel.ElementAt(4).ImageUrl');"></div>
+                                    <div class="ch-info-back">
+                                        <h3>@servicemodel.ElementAt(4).BackTitle</h3>
+                                        <p>@servicemodel.ElementAt(4).BackDescription</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>@servicemodel.ElementAt(4).Title</h3>
+                    <p>@servicemodel.ElementAt(4).Description</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
